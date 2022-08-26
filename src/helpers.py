@@ -17,3 +17,4 @@ def get_refined(text):
     response = {}
     for index, ent in enumerate(ents):
         response[str(index)] = {"text": ent.text, "entity_id": ent.pred_entity_id, "mention_type": ent.coarse_mention_type}
+    return response
