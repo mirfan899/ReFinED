@@ -29,4 +29,4 @@ api.add_resource(Refined, "/refined")
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host='0.0.0.0', threading=False, processes=1)
+    app.run(debug=True, port=5000, host='0.0.0.0', threaded=False, processes=1)
