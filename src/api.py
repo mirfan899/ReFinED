@@ -12,7 +12,7 @@ parser.add_argument("sentence", type=str, help="sentence or words should be unic
 
 class Refined(Resource):
     def get(self):
-        return {"message": "Welcome to Refined.", "status": 200}
+        return {"message": "Welcome to Refined API.", "status": 200}
 
     def post(self):
         args = parser.parse_args()
