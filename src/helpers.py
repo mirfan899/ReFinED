@@ -14,7 +14,7 @@ refined = Refined.from_pretrained(model_name='wikipedia_model',
 
 def get_refined(text):
     ents = refined.process_text(text)
-    response = {}
-    for index, ent in enumerate(ents):
-        response[str(index)] = {"text": ent.text, "entity_id": ent.pred_entity_id, "mention_type": ent.coarse_mention_type}
+    response = []
+    for ent in ents:
+        response.append({"text": ent.text, "entity_id": ent.pred_entity_id, "mention_type": ent.coarse_mention_type})
     return response
