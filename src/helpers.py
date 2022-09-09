@@ -20,9 +20,6 @@ def get_refined(text):
     ents = refined.process_text(text)
     response = []
     for ent in ents:
-        index = []
-        for o in indexes:
-            if o["word"] in ent.text:
-                index.append(o["index"])
-        response.append({"text": ent.text, "entity_id": ent.pred_entity_id, "mention_type": ent.coarse_mention_type, "idx": index})
+        ent_id = {"wikidata_qcode": ent.pred_entity_id[0]["wikidata_qcode"], "confidence": ent.pred_entity_id[1]}
+        response.append({"text": ent.text, "entity_id": ent_id, "mention_type": ent.coarse_mention_type})
     return response
