@@ -7,4 +7,4 @@ RUN python -m nltk.downloader popular
 WORKDIR ./src
 
 EXPOSE 5000
-CMD ["pyhon", "api.py"]
+CMD ["./run.sh"]
